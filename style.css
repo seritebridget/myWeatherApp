@@ -15,7 +15,9 @@ a {
 }
 
 .weather-app {
-  background: #A0E292;
+  background: url('https://s3.amazonaws.com/shecodesio-production/uploads/files/000/109/117/original/clouds.jpg?1704309984') no-repeat center center fixed;
+      background-size: cover;
+     
   max-width: 600px;
   margin: 45px auto;
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
