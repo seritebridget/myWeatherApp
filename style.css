@@ -86,8 +86,8 @@ main {
 }
 
 .weather-app-temperature {
-  font-size: 88px;
-  line-height: 88px;
+  font-size: 8px;
+  line-height: 8px;
   font-weight: bold;
 }
 
@@ -95,7 +95,6 @@ main {
   margin-top: 6px;
   font-size: 28px;
 }
-
 
 footer {
   border-top: 1px solid #f9f7fe;
