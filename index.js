@@ -4,6 +4,8 @@ function search(event) {
   let cityElement = document.querySelector("#current-city");
   cityElement.innerHTML = searchInputElement.value;
 
+  console.log(response.data);
+
   let apiKey = "0o1f34252a459ee87e614bt4fc070a90";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${searchInputElement.value}&key=${apiKey}&units=metric`;
 
