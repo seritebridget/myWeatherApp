@@ -6,10 +6,15 @@ function refreshWeather(response) {
   let humidityElement = document.querySelector("#humidity");
   let windSpeedElement = document.querySelector("#wind-speed");
   let timeElement = document.querySelector("#time");
-  let date = new Date(response.data.time * 1000);
   let iconElement = document.querySelector("#icon");
 
   cityElement.innerHTML = response.data.city;
+
+  // Use the API timezone information to adjust the time
+  let date = new Date(response.data.time * 1000);
+  let timezoneOffset = response.data.timezone / 60; // Convert seconds to minutes
+  date.setMinutes(date.getMinutes() + timezoneOffset);
+
   timeElement.innerHTML = formatDate(date);
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
