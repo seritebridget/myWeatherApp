@@ -10,10 +10,9 @@ function refreshWeather(response) {
 
   cityElement.innerHTML = response.data.city;
 
-  // Use the API timezone information to adjust the time
-  let date = new Date(response.data.time * 1000);
-  let timezoneOffset = response.data.timezone / 60; // Convert seconds to minutes
-  date.setMinutes(date.getMinutes() + timezoneOffset);
+  let date = new Date(response.data.time.dt * 1000);
+  let timezoneOffset = response.data.timezone;
+  date.setUTCSeconds(date.getUTCSeconds() + timezoneOffset);
 
   timeElement.innerHTML = formatDate(date);
   descriptionElement.innerHTML = response.data.condition.description;
